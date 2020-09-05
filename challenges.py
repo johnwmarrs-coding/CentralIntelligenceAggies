@@ -19,48 +19,4 @@ class Challenge:
         self.result = 0
 
 
-# Subclasses of challenge to fill in
-
-class EncriptionChallenge(Challenge):
-    def runencript(self):
-        print("### Encription Challenge ###")
-
-
-class DDOSChallenge(Challenge):
-    def runddos(self):
-        print("### DDOS Challenge ###")
-
-
-class MalwareChallenge(Challenge):
-    def runmalware(self):
-        print("### Malware Challenge ###")
-
-
-class PhishingChallenge(Challenge):
-    def runphish(self):
-        print("### Phising Challenge ###")
-
-
-class PasswordChallenge(Challenge):
-    def runpassword(self):
-        print("### Password security Challenge ###")
-
-
-class DecryptChallenge(Challenge):
-    def runsqlinject(self):
-        print("### Decrypt Challenge ###")
-
-
-class SQLChallenge(Challenge):
-    def runsqlinject(self):
-        print("### SQL Injection Challenge ###")
-
-
-class RansomChallenge(Challenge):
-    def runransom(self):
-        print("### Ransom Challenge ###")
-
-
-class ManInMiddleChallenge(Challenge):
-    def runmaninmid(self):
-        print("### Man in Middle Challenge ###")
+# Subclasses in respective files
