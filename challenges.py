@@ -19,7 +19,7 @@ class Challenge:
         self.result = 0
 
 
-# Inherited or Sub class (Note Person in bracket)
+# Subclasses of challenge to fill in
 
 class EncriptionChallenge(Challenge):
     def runencript(self):
