@@ -14,6 +14,6 @@ class Encryption(challenges.Challenge):
 
     def getResult(self, userAns):
         if userAns.lower() == self.ans.lower():
-            return True
+            return self.points
         else:
-            return False
+            return 0
