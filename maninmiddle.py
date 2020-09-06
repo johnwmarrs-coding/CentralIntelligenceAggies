@@ -27,7 +27,7 @@ class ManInMiddle(challenges.Challenge):
 
     def getResult(self, userResult):
         if self.decryptedIntercept.lower == userResult.lower:
-            self.computeResult(userResult)
+            self.computePoins(userResult)
             return True
 
 
