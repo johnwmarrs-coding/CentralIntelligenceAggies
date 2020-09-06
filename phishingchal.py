@@ -8,20 +8,23 @@ class PhishingChallenge(challenges.Challenge):
 
     prompt = "Hey IT person, I got these emails the other day but I am not sure if I should trust them, what do you think?"
 
+    numberAnswered = 0
+    userAnswer = []
+
     emails = [
         (
-            "Sender: promotions@amazone.com"
-            "Recipient: professorSharon@howdyhackuniversity.com"
-
-            "Hello Trusted User,"
-            ""
-            "Sign up this week only to receive 1 year of free prime membership."
-            "This is an exclusive offer given only to our most trusted members."
-            "Just log-in here to receive free shipping!"
-            "https://amazone.com/freestuffpromo/"  
-            ""
-            "Thank you for your business!"
-            "- Amazon Marketing Team"
+            "\nSender: promotions@amazone.com\n"
+            "Recipient: professorSharon@howdyhackuniversity.com\n"
+            "\n"
+            "Hello Trusted User,\n"
+            "\n"
+            "Sign up this week only to receive 1 year of free prime membership.\n"
+            "This is an exclusive offer given only to our most trusted members.\n"
+            "Just log-in here to receive free shipping!\n\n"
+            "https://amazone.com/freestuffpromo/\n"  
+            "\n"
+            "Thank you for your business!\n"
+            "- Amazon Marketing Team\n"
         ),
 
         (
@@ -79,16 +82,37 @@ class PhishingChallenge(challenges.Challenge):
             if userAnswer[i] == self.answers[i]:
                 answersCorrect +=1
 
-        if (answersCorrect == 3):
-            pointsEarned = 10
-        elif (answersCorrect == 2):
-            pointsEarned = 6
-        elif (answersCorrect == 1):
-            pointsEarned = 3
-        else:
-            pointsEarned = 0
+            if (answersCorrect == 3):
+                pointsEarned = 10
+            elif (answersCorrect == 2):
+                pointsEarned = 6
+            elif (answersCorrect == 1):
+                pointsEarned = 3
+            else:
+                pointsEarned = 0
 
-    	return pointsEarned
+        return pointsEarned
 
     def getKeyInfo(self):
-    	return self.keyInfo
+        return self.keyInfo
+
+    def getEmail(self):
+        return self.emails[self.numberAnswered]
+
+
+    def provideAnswer(self, ans):
+        if (ans.lower() == "yes"):
+            self.numberAnswered += 1
+            self.userAnswer.append(True)
+        elif (ans.lower() == "no"):
+            self.numberAnswered += 1
+            self.userAnswer.append(False)
+        else:
+            return "I don't understand your answer"
+
+        if (self.numberAnswered == len(self.emails)):
+            return self.getResult(self.userAnswer)
+        else:
+            return None
+
+

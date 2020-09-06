@@ -4,7 +4,7 @@ class ServerFrame(tk.Frame):
 
 	data = [("123.23.242.21", 3), ("234.42.123.11", 7), ("124.33.421.23", 4)]
 	def __init__(self, parent=None):
-		self.fontMedium = ('Verdana', 14)
+		self.fontMedium = ('Verdana', 12)
 
 		tk.Frame.__init__(self, parent, bg="white")
 		self.pack(fill="both", expand=True)
@@ -31,3 +31,6 @@ class ServerFrame(tk.Frame):
 
 		self.bottomFrame.pack(fill="both", side="bottom", expand=True)
 		self.topFrame.pack(side="top", fill="both", expand=True)
+
+	def setGC(self, gc):
+		self.gameController = gc

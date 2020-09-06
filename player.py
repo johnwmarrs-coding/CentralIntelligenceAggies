@@ -13,20 +13,20 @@ class Player:
 
     # Constructor
     def __init__(self):
-        self.points = 10
+        self.points = 0
         self.title = ""
 
     # Display points in terminal
-    def getpoints(self):
+    def getPoints(self):
         print("Points: "+self.points)
         return self.points
 
     # Called after every challenge to set points based on that challenge
-    def setpoints(self, p):
+    def addPoints(self, p):
         self.points = self.points + p
 
     # Used at end of game to calculate your title based on points
-    def calculatetitle(self):
+    def calculateTitle(self):
         if self.points >= 90:
             title = "Cyber Expert"
         elif self.points >= 80:

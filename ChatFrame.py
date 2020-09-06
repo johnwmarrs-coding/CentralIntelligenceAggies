@@ -3,11 +3,12 @@ from tkinter import ttk
 
 class ChatFrame(tk.Frame):
 	def __init__(self, parent=None):
-		self.fontMedium = ('Verdana', 14)
+		self.fontMedium = ('Verdana', 12)
 
 		tk.Frame.__init__(self, parent)
 		self.pack(fill="both", expand=True)
 		self.makeWidgets()
+		self.text = ""
 
 	def makeWidgets(self):
 
@@ -42,7 +43,21 @@ class ChatFrame(tk.Frame):
 
 	def handleSendMessage(self):
 		print('Message Handled')
+		self.handleReceiveMessage(self.entryField.get(), "Me")
+		self.gameController.updateGame(self.entryField.get())
 
-	def receiveMessage(self, message):
+	def setGC(self, gc):
+		self.gameController = gc
+
+	def handleReceiveMessage(self, message, sender):
 		print("This addes the message to the text box")
+		self.text += str(sender) + ' : ' + str(message) + '\n\n'
+		self.setTextInput(self.text)
+
+	def setTextInput(self, text):
+		self.textArea.delete(1.0,"end")
+		self.textArea.insert(1.0, text)
+
+
+
 
