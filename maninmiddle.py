@@ -9,9 +9,9 @@ class ManInMiddle(challenges.Challenge):
 
     points = 0
 
-    interceptMessage = "Odxqfk wkh udqvrpzduh"
+    interceptMessage = "Odxqfk wkh udqvrpzduh!"
 
-    decryptedIntercept = "Launch the ransomware"
+    decryptedIntercept = "Launch the ransomware!"
 
     def getIntercept(self):
         return self.interceptMessage
