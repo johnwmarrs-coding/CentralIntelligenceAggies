@@ -16,7 +16,8 @@ class ManInMiddle(challenges.Challenge):
     def getIntercept(self):
         return self.interceptMessage
 
-    # Call this after get result because points get set after get result
+    # Use this to access points earned for this challenge after calling getResult()
+    
     def getPoints(self):
         return self.points
 
