@@ -10,7 +10,9 @@ class Decryption(challenges.Challenge):
     emailsEncrypted = ["qkdqhb1996z@pryr.frp", "ehuqdugp@ahpqh.frp", "ykdoh@pryr.frp", "ehyorqjkruq@jpdlo.frp"]
     emailsAns = ["nhaney1996w@movo.com", "bernardm@xemne.com", "vhale@movo.com", "bevlonghorn@gmail.com"]
 
-    # Constructor
+    
+    def getPrompt(self):
+        return self.prompt
 
     def getTimeLimit(self):
         return self.timeLimit
@@ -33,6 +35,3 @@ class Decryption(challenges.Challenge):
             return True
 
         return False
-
-    def getPrompt(self):
-        return self.prompt
