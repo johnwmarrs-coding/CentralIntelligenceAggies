@@ -22,12 +22,17 @@ class ManInMiddle(challenges.Challenge):
         return self.points
 
     def computePoints(self, userResult):
-        if self.decryptedIntercept.lower == userResult.lower:
+        if self.decryptedIntercept.lower() == userResult.lower():
             self.points = 10
 
     def getResult(self, userResult):
-        if self.decryptedIntercept.lower == userResult.lower:
-            self.computePoins(userResult)
+        if self.decryptedIntercept.lower() == userResult.lower():
+            self.computePoints(userResult)
             return True
+        else:
+            return False
+
+    def getPrompt(self):
+        return self.prompt
 
 

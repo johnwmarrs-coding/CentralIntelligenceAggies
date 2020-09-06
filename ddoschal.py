@@ -46,5 +46,7 @@ class DDOSChallenge(challenges.Challenge):
 
     	return pointsEarned
 
+
     def getKeyInfo(self):
     	return self.keyInfo
+

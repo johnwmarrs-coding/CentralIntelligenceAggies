@@ -1,6 +1,7 @@
 
 import phishingchal as pc
 import passwordchal as pac
+import maninmiddle as mm
 import player
 
 class GameController:
@@ -8,7 +9,7 @@ class GameController:
 	chatFrame = None
 	serverFrame = None
 
-	gameState = 1
+	gameState = 4
 	player = None
 
 	def __init__(self):
@@ -50,12 +51,22 @@ class GameController:
 				self.player.addPoints(self.passwordChallenge.getPointTotal())
 				self.gameState += 1
 
+		if (self.gameState == 4):
+			if (self.manInMiddle.getResult(updateInput)):
+				self.chatFrame.handleReceiveMessage("My goodness you cracked it! Buddy ole chap!", "Boss")
+				self.player.addPoints(self.manInMiddle.getPoints())
+				self.gameState += 1
+			else:
+				self.chatFrame.handleReceiveMessage("Hmmm. That doesn't seem quite right. Keep trying!", "Boss")
+
 	def displayGameState(self):
 		print('Displaying game state')
 		if (self.gameState == 0):
 			self.displayPhishingChallenge()
 		elif (self.gameState == 1):
 			self.displayPasswordChallenge()
+		elif (self.gameState == 4):
+			self.displayManInMiddleChallenge()
 
 
 
@@ -70,6 +81,14 @@ class GameController:
 		self.passwordChallenge = pac.Password()
 
 		self.terminalFrame.handleReceiveOutput(self.passwordChallenge.getPrompt(), "system")
+
+	def displayManInMiddleChallenge(self):
+		print('Displaying man in middle')
+		self.manInMiddle = mm.ManInMiddle()
+
+		self.chatFrame.handleReceiveMessage(self.manInMiddle.getPrompt(), "Boss")
+		self.chatFrame.handleReceiveMessage(self.manInMiddle.getIntercept(), "Boss")
+
 
 	def setTerminalFrame(self, tf):
 		self.terminalFrame = tf
