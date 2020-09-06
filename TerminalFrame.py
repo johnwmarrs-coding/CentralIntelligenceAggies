@@ -10,20 +10,20 @@ class TerminalFrame(tk.Frame):
 
 	def makeWidgets(self):
 
-		topFrame = tk.Frame(self)
+		self.topFrame = tk.Frame(self)
 
-		scrollbar  = tk.Scrollbar(topFrame)
-		scrollbar.pack(side="right", fill="y")
+		self.scrollbar  = tk.Scrollbar(self.topFrame)
+		self.scrollbar.pack(side="right", fill="y")
 
-		textArea = tk.Text(topFrame, bg="black", fg="green", font=self.fontMedium, yscrollcommand=scrollbar.set)
-		textArea.pack(side="left", expand=True, fill="both")
+		self.textArea = tk.Text(self.topFrame, bg="black", fg="green", font=self.fontMedium, yscrollcommand=self.scrollbar.set)
+		self.textArea.pack(side="left", expand=True, fill="both")
 
-		scrollbar.config(command=textArea.yview)
+		self.scrollbar.config(command=self.textArea.yview)
 
-		entryFieldTextVar = tk.StringVar()
-		entryFieldTextVar.set("c:/reveille/home>")
-		entryField = tk.Entry(self, bg="black", fg="green", font=self.fontMedium, textvariable=entryFieldTextVar)
+		self.entryFieldTextVar = tk.StringVar()
+		self.entryFieldTextVar.set("c:/reveille/home>")
+		self.entryField = tk.Entry(self, bg="black", fg="green", font=self.fontMedium, textvariable=self.entryFieldTextVar)
 
-		entryField.pack(fill="x", side="bottom")
-		topFrame.pack(side="top", fill="both", expand=True, pady=(0, 5))
+		self.entryField.pack(fill="x", side="bottom")
+		self.topFrame.pack(side="top", fill="both", expand=True, pady=(0, 5))
 
