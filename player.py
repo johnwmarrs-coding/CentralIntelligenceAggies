@@ -18,7 +18,6 @@ class Player:
 
     # Display points in terminal
     def getPoints(self):
-        print("Points: "+self.points)
         return self.points
 
     # Called after every challenge to set points based on that challenge
