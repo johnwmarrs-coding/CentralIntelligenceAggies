@@ -19,7 +19,9 @@ class Decryption(challenges.Challenge):
     # Use to access emails and display them in main
     def getEmails(self):
         return self.emailsEncrypted
-
+    
+    # Use this to access points earned for this challenge after calling getResult()
+    
     def getPoints(self):
         return self.points
 
