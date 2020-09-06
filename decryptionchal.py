@@ -10,7 +10,6 @@ class Decryption(challenges.Challenge):
     emailsEncrypted = ["qkdqhb1996z@pryr.frp", "ehuqdugp@ahpqh.frp", "ykdoh@pryr.frp", "ehyorqjkruq@jpdlo.frp"]
     emailsAns = ["nhaney1996w@movo.com", "bernardm@xemne.com", "vhale@movo.com", "bevlonghorn@gmail.com"]
 
-    
     def getPrompt(self):
         return self.prompt
 
@@ -21,10 +20,12 @@ class Decryption(challenges.Challenge):
     def getEmails(self):
         return self.emailsEncrypted
 
-    # Use this to compare results to user answers, 2 points for correct email
-    def getResult(self, userAnwers):
+    def getPoints(self):
+        return self.points
+
+    def computePoints(self, userResult):
         countCheck = 0
-        for x in userAnwers:
+        for x in userResult:
             if x in self.emailsAns:
                 self.points += 2
                 countCheck += 1
@@ -32,6 +33,17 @@ class Decryption(challenges.Challenge):
         # Bonus point to equal 10 total
         if countCheck == 4:
             self.points += 1
-            return True
 
+    # Use this to compare results to user answers, 2 points for correct email
+    def getResult(self, userResult):
+
+        self.computePoints(userResult)
+
+        countCheck = 0
+        for x in userResult:
+            if x in self.emailsAns:
+                countCheck += 1
+
+        if countCheck == 4:
+            return True
         return False
