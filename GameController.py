@@ -114,7 +114,7 @@ class GameController:
                     self.player.addPoints(self.sqlChallenge.getPoints())
 
                     self.chatFrame.handleReceiveMessage('You finished the game!', "Boss")
-                    self.chatFrame.handleReceiveMessage('You earned a total of ' + str(self.player.points), "Boss")
+                    self.chatFrame.handleReceiveMessage('You earned a total of ' + str(self.player.points) + " points", "Boss")
                     self.chatFrame.handleReceiveMessage('This makes you: ' + str(self.player.calculateTitle()), "Boss")
 
                     self.gameState += 1

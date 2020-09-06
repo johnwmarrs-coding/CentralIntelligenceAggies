@@ -5,7 +5,7 @@ class ManInMiddle(challenges.Challenge):
 
     # Variables
     prompt = "Its your boss again...we have intercepted messages sent to a 2 percenter after those phishing emails. We need you to " \
-             "perform decryption again and steal his login information." \
+             "perform decryption and steal his login information." \
 
     points = 0
 
