@@ -27,13 +27,15 @@ class Player:
 
     # Used at end of game to calculate your title based on points
     def calculateTitle(self):
-        if self.points >= 90:
+        if self.points >= 46:
             title = "Cyber Expert"
-        elif self.points >= 80:
+        elif self.points >= 36:
             title = "Advanced Detective"
-        elif self.points >= 70:
+        elif self.points >= 30:
             title = "Intermediate Detective"
-        elif self.points >= 60:
+        elif self.points >= 20:
             title = "Cyber Novice"
         else:
             title = "Flunkie"
+
+        return title

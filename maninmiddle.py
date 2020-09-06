@@ -9,9 +9,10 @@ class ManInMiddle(challenges.Challenge):
 
     points = 0
 
-    interceptMessage = "Odxqfk wkh udqvrpzduh!"
+    interceptMessage = "suhsdulqj wkh ggrv dwwdfn qrz - eyedqglw1!"
 
-    decryptedIntercept = "Launch the ransomware!"
+    decryptedIntercept = "preparing the ddos attack now - bvbandit1"
+    keyInfo = 'bvbandit1'
 
     def getIntercept(self):
         return self.interceptMessage
@@ -34,5 +35,8 @@ class ManInMiddle(challenges.Challenge):
 
     def getPrompt(self):
         return self.prompt
+
+    def getKeyInfo(self):
+        return self.keyInfo
 
 
