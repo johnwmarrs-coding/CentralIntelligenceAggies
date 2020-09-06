@@ -37,7 +37,7 @@ class GameController:
                 self.player.addPoints(response)
                 self.chatFrame.handleReceiveMessage(
 					"*Its the next day, you feel like you answered a phishing email wrong* You might want to create a new strong password in terminal.",
-					"Boss")
+					"System")
 
                 self.gameState += 1
                 # self.displayPasswordChallenge()
