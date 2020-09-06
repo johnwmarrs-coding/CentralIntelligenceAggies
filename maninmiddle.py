@@ -20,9 +20,9 @@ class ManInMiddle(challenges.Challenge):
     def getPoints(self):
         return self.points
 
-    def computeResult(self, userResult):
+    def computePoints(self, userResult):
         if self.decryptedIntercept.lower == userResult.lower:
-            self.points == 10
+            self.points = 10
 
     def getResult(self, userResult):
         if self.decryptedIntercept.lower == userResult.lower:
