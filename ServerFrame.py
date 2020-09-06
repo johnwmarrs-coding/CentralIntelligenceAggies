@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 class ServerFrame(tk.Frame):
 
@@ -27,10 +28,42 @@ class ServerFrame(tk.Frame):
 		self.listBox.pack(side="left", fill="both", expand=True)
 		self.scrollbar.config(command=self.listBox.yview)
 
-		self.bottomFrame = tk.Frame(self)
+		self.bottomFrame = ttk.Frame(self)
 
-		self.bottomFrame.pack(fill="both", side="bottom", expand=True)
+		self.labelVar = tk.StringVar()
+		self.labelVar.set("No Alerts at this Time")
+		self.alertLabel = tk.Label(self.bottomFrame, textvariable=self.labelVar, fg="green")
+
+		self.alertLabel.pack(side="top", fill="x", expand=True)
+
+		self.blackListButton = tk.Button(self.bottomFrame, text="Blacklist IP", command=self.handleBlacklist)
+		self.blackListButton.pack(side="bottom", fill="x")
+
+
+		self.bottomFrame.pack(fill="both", side="bottom", expand=False)
 		self.topFrame.pack(side="top", fill="both", expand=True)
 
 	def setGC(self, gc):
 		self.gameController = gc
+
+	def handleBlacklist(self):
+		value = self.listBox.get("active")
+
+		actualIp = value.split(" ")[1]
+		print(actualIp)
+
+		self.gameController.updateGame(actualIp)
+
+	def setAlert(self, message, color):
+		print("Setting alert")
+		self.labelVar.set(message)
+		self.alertLabel.configure(text=color)
+
+	def setIps(self, ipsAndTraffic):
+		self.data = ipsAndTraffic
+		self.clearIps()
+		for i in range(0, len(ipsAndTraffic)):
+			self.listBox.insert("end", ("IP: " + self.data[i][0] + " # requests in last hour = " + str(self.data[i][1])))
+
+	def clearIps(self):
+		self.listBox.delete(0, 'end')

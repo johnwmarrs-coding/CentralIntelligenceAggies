@@ -38,7 +38,7 @@ class ChatFrame(tk.Frame):
 		self.entryField.pack(side="right", fill="x", expand=True)
 		self.submitButton.pack( side="right")
 
-		self.bottomFrame.pack(side="bottom", fill="x", expand=True)
+		self.bottomFrame.pack(side="bottom", fill="x", expand=False)
 		self.topFrame.pack(side="top", fill="both", expand=True, pady=(0, 5))
 
 	def handleSendMessage(self):
