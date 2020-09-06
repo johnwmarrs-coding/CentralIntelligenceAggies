@@ -7,13 +7,15 @@
 
 
 class Challenge:
-
+    
+    fail = False
+    
     # Number of points to give to player
     result = 0
 
     # Constructor
     def __init__(self):
-        self.fail = False
+        self.fail = True
         self.result = 0
 
 
