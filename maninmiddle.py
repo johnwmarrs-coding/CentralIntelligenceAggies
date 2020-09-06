@@ -4,14 +4,14 @@ import challenges
 class ManInMiddle(challenges.Challenge):
 
     # Variables
-    prompt = "Its your boss again ... we have intercepted Bevo's messages sent to a 2 percenter. We need you to " \
+    prompt = "Its your boss again...we have intercepted messages sent to a 2 percenter after those phishing emails. We need you to " \
              "perform decryption again and steal his login information." \
 
     points = 0
 
-    interceptMessage = "suhsdulqj wkh ggrv dwwdfn qrz - eyedqglw1!"
+    interceptMessage = "Suhsdulqj wkh ggrv dwwdfn qrz - eyedqglw1!"
 
-    decryptedIntercept = "preparing the ddos attack now - bvbandit1"
+    decryptedIntercept = "Preparing the ddos attack now - bvbandit1!"
     keyInfo = 'bvbandit1'
 
     def getIntercept(self):

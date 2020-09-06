@@ -28,35 +28,35 @@ class PhishingChallenge(challenges.Challenge):
         ),
 
         (
-            "Sender: willjames@howdyhackuniversity.edu"
-            "Recipient: professorSharon@howdyhackuniversity.edu"
+            "Sender: willjames@howdyhackuniversity.edu\n"
+            "Recipient: professorSharon@howdyhackuniversity.edu\n"
 
-            "Howdy Professor Sharon,"
-            ""
-            "I was doing research on the basket weaving assignment posted last week."
-            "I came across a few interesting websites that I would like you to check out."
-            "Let me know what you think of them!"
+            "Howdy Professor Sharon,\n"
+            "\n"
+            "I was doing research on the basket weaving assignment posted last week.\n"
+            "I came across a few interesting websites that I would like you to check out.\n"
+            "Let me know what you think of them!\n"
             ""  
-            "https://en.wikipedia.org/wiki/Basket_weaving"
-            "https://en.wikipedia.org/wiki/Underwater_basket_weaving"
+            "https://en.wikipedia.org/wiki/Basket_weaving\n"
+            "https://en.wikipedia.org/wiki/Underwater_basket_weaving\n"
             ""
-            "Thank you for being such a great professor!"
-            "- Will James HHU Class of 2022"
+            "Thank you for being such a great professor!\n"
+            "- Will James HHU Class of 2022\n"
         ),
 
         (
-            "Sender: trustedassociate@datacollectionservice.com"
-            "Recipient: professorSharon@howdyhackuniversity.com"
+            "Sender: trustedassociate@datacollectionservice.com\n"
+            "Recipient: professorSharon@howdyhackuniversity.com\n"
+            "\n"
+            "IMPORT REMINDER!\n"
             ""
-            "IMPORT REMINDER!"
+            "According to new government policy, every citizen needs to update their Social Security Number.\n"
+            "If your SSN is not uploaded within the week, then you will be taxed DOUBLE in the upcoming season.\n"
+            "ACT NOW TO UPDATE YOUR SSN\n"
             ""
-            "According to new government policy, every citizen needs to update their Social Security Number."
-            "If your SSN is not uploaded within the week, then you will be taxed DOUBLE in the upcoming season."
-            "ACT NOW TO UPDATE YOUR SSN"
+            "http://datacollectionservice.com/upload\n"
             ""
-            "http://datacollectionservice.com/upload"
-            ""
-            "- US Government Data Collection Service"
+            "- US Government Data Collection Service\n"
 
         
         )
@@ -68,7 +68,7 @@ class PhishingChallenge(challenges.Challenge):
 
     keyInfo = "hacker's website: amazone.com"
 
-    #Constructor
+    # Constructor
 
     def getPrompt(self):
     	return self.prompt
