@@ -7,8 +7,6 @@
 
 
 class Challenge:
-    # Set true of player passes the challenge
-    fail = False
 
     # Number of points to give to player
     result = 0
