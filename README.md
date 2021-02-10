@@ -10,3 +10,13 @@ while also telling a short little story.
 It is just a python project, so running the application using
 a python version 3.6 or greater should work just fine. 
 
+Step 1) 
+clone or download the project.
+
+Step 2) navigate into the project folder
+
+Step 3) run the application
+ex. python TestApp.py
+
+[TestApp.py is the main application]
+
