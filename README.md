@@ -1,11 +1,12 @@
 # CentralIntelligenceAggies
 This is the project repo for the Central Intelligence Aggies Howdy hack 2020 team. 
 
-John Marrs can access the repository.
+The application is meant to be a short game that teaches some cybersecurity concepts
+while also telling a short little story. 
 
-Chris Plummer can access repo.
+### This project Won the Aggie School Spirit Award !
 
-Aakash Haran can access it as well.
-
-Siyuan Sun(David) can access it as well.
+### How to Run the App
+It is just a python project, so running the application using
+a python version 3.6 or greater should work just fine. 
 
